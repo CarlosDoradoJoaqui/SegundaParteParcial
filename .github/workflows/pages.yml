@@ -3,6 +3,13 @@ name: Publicar vistas en GitHub Pages
 on:
   push:
     branches: [main]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "angular.json"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -31,13 +38,21 @@ jobs:
       - name: Compilar la aplicación
         run: npx ng build --base-href /SegundaParteParcial/
 
-      - name: Publicar en gh-pages
+      - name: Copiar la compilación a la raíz publicada
         run: |
-          touch dist/clinica-unicauca/browser/.nojekyll
-          cd dist/clinica-unicauca/browser
-          git init
+          rm -f main-*.js styles-*.css
+          rm -rf media
+          cp -a dist/clinica-unicauca/browser/. .
+          touch .nojekyll
+
+      - name: Publicar en main
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Publica las vistas de Clínica Unicauca Salud"
-          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:gh-pages
+          git add index.html favicon.ico .nojekyll imagenes media main-*.js styles-*.css
+          if git diff --staged --quiet; then
+            echo "La compilación publicada ya está al día."
+          else
+            git commit -m "Actualiza las vistas publicadas de la clínica"
+            git push
+          fi
