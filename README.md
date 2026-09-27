@@ -22,5 +22,6 @@ ng serve
 Abra http://localhost:4200/
 
 ## Entrega
+Enlace al video de Youtube explicativo:
 
-Comprima el trabajo como `LIS_L4_apellidosNombres.rar` e incluya `clinica-angular` (sin `node_modules`) y `version-html`.
+https://youtu.be/wjTcnmSYVXI
