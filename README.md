@@ -11,6 +11,10 @@ Proyecto Angular dividido en bloques (cada uno con HTML, CSS y TypeScript):
 
 La primera versión HTML + CSS + Bootstrap está en `../version-html`.
 
+## Sitio publicado
+
+https://carlosdoradojoaqui.github.io/SegundaParteParcial/
+
 ## Cómo ejecutar
 
 ```bash
