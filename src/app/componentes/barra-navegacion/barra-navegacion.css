@@ -1,0 +1,52 @@
+.navbar-clinica {
+  background: rgba(15, 43, 38, 0.94);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(18, 60, 50, 0.2);
+}
+
+.navbar-clinica .navbar-brand,
+.navbar-clinica .nav-link {
+  color: #f7f1e4;
+}
+
+.navbar-brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.nav-link {
+  position: relative;
+  margin-left: 0.35rem;
+  font-weight: 600;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.3rem;
+  height: 2px;
+  background: #c9a227;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #f3d887;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler {
+  border-color: rgba(243, 216, 135, 0.45);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}

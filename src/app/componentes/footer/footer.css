@@ -1,0 +1,31 @@
+.footer-clinica {
+  width: 100%;
+  color: #f4efe6;
+  background:
+    linear-gradient(160deg, #0d2f28 0%, #123c32 60%, #1b4d41 100%);
+}
+
+.footer-marca {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  color: #f3d887;
+}
+
+.redes-footer a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  margin-right: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.redes-footer a:hover {
+  background: #c9a227;
+  color: #123c32;
+  border-color: #c9a227;
+}
